@@ -143,4 +143,40 @@ input, textarea {
     50% {background-color: rgb(253, 220, 220);}
   }
 
+  @media screen and (max-width: 900px) { 
+    .wrapper {
+        width: 70%;
+    }
+    .wrapper > img { /*login page image */
+        height: 20vw;
+    }
+    .wrapper > .sign { /*signup page img */
+        height: 11vw;
+    }
+  }
+
+  @media screen and (max-width: 700px) { 
+    .wrapper {
+        width: 80%;
+    }
+  }
+
+  @media screen and (max-width: 500px) { 
+    .wrapper {
+        width: 90%;
+    }
+    .wrapper > img { /*login page image */
+        height: 25vw;
+    }
+    .wrapper > .sign { /*signup page img */
+        height: 15vw;
+    }
+  }
+
+  @media screen and (max-width: 350px) { 
+    .wrapper {
+        width: 98%;
+    }
+  }
+
 /* Index page styling ENDS */
