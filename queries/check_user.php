@@ -29,6 +29,6 @@
             header("Location: ../login.php? verified= no");
         }
     } else if ($exist->num_rows == 0) { /* User doesn't exist */
-        header("Location: ../login.php? notexist= wrong");
+        header("Location: ../login.php? notexist= no");
     }
 ?>

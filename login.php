@@ -43,7 +43,49 @@ if (isset($_GET['exist'])) {
             })
         });
     </script> ';
-} 
+} else if (isset($_GET['pass'])) {
+    echo '<script type="text/javascript">
+        $(document).ready(function(){
+            swal({
+                position: "top-end",
+                type: "info",
+                icon: "warning",
+                title: "Your password is incorrect",
+                text: "try to re-enter your password",
+                button: true,
+                timer: 2500
+            })
+        }); 
+</script> ';
+} else if (isset($_GET['notexist'])) {
+    echo '<script type="text/javascript">
+        $(document).ready(function(){
+            swal({
+                position: "top-end",
+                type: "info",
+                icon: "error",
+                title: "There is no such user",
+                text: "try to register",
+                button: true,
+                timer: 2500
+            })
+        });
+    </script> ';
+} else if (isset($_GET['verified'])) {
+    echo '<script type="text/javascript">
+        $(document).ready(function(){
+            swal({
+                position: "top-end",
+                type: "info",
+                icon: "info",
+                title: "Please check your email",
+                text: "to verify your acount",
+                button: true,
+                timer: 2500
+            })
+        });
+    </script> ';
+}
 ?>
 <body>
 
