@@ -29,6 +29,6 @@ if ($result->num_rows > 0) { /* User alreayd exists - goes to LOGIN page */
         $_SESSION['name'] = $record['name'];
         $_SESSION['surname'] = $record['surname'];
         $_SESSION['email'] = $record['email'];
-        header("Location: ../email_handler.php"); /* <--- This page will send an email to the user to verify his account */
+        header("Location: email_handler.php"); /* <--- This page will send an email to the user to verify his account */
 }
 ?>
