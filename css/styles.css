@@ -21,7 +21,7 @@ body {
 
 
 
-/* index page styling */
+/* Login & signup page styling STARTS*/
 
 
 .wrapper {
@@ -102,14 +102,11 @@ h1 {
     color: white;
     text-shadow: 0px 0px 2px #878787;
 }
-/* background-color: rgb(108, 255, 115);  green*/
 
 .loginbut:hover {
     -webkit-box-shadow: 0px 0px 15px 0px #6CFF73; 
     box-shadow: 0px 0px 15px 0px #6CFF73;
 }
-
-
 
 button {
     width: 150px;
@@ -119,7 +116,6 @@ button {
     color: whitesmoke;
     outline: none;
 }
-
 
 input, textarea {
     flex: 1;
@@ -135,15 +131,13 @@ input, textarea {
     animation-duration: 0.6s;
     animation-iteration-count: 3;
     animation-fill-mode: forwards;
-  }
-
-
+}
   
   @keyframes glow {
     50% {background-color: rgb(253, 220, 220);}
   }
 
-  @media screen and (max-width: 900px) { 
+@media screen and (max-width: 900px) { 
     .wrapper {
         width: 70%;
     }
@@ -153,15 +147,15 @@ input, textarea {
     .wrapper > .sign { /*signup page img */
         height: 11vw;
     }
-  }
+}
 
-  @media screen and (max-width: 700px) { 
+@media screen and (max-width: 700px) { 
     .wrapper {
         width: 80%;
     }
-  }
+}
 
-  @media screen and (max-width: 500px) { 
+@media screen and (max-width: 500px) { 
     .wrapper {
         width: 90%;
     }
@@ -171,12 +165,12 @@ input, textarea {
     .wrapper > .sign { /*signup page img */
         height: 15vw;
     }
-  }
+}
 
-  @media screen and (max-width: 350px) { 
+@media screen and (max-width: 350px) { 
     .wrapper {
         width: 98%;
     }
-  }
+}
 
-/* Index page styling ENDS */
+/* Login & signup page styling ENDS */
