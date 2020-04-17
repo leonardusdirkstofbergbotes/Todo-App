@@ -14,6 +14,23 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     <link rel="stylesheet" href="css/styles.css">
 </head>
+<?php 
+if (isset($_GET['exist'])) {
+    echo '<script type="text/javascript">
+        $(document).ready(function(){
+            swal({
+                position: "top-end",
+                type: "info",
+                icon: "info",
+                title: "User already exists",
+                text: "try entering your details here",
+                button: true,
+                timer: 2500
+            })
+        });
+    </script> '; 
+}
+?>
 <body>
 
 
