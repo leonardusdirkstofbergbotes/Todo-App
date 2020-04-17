@@ -29,7 +29,21 @@ if (isset($_GET['exist'])) {
             })
         });
     </script> '; 
-}
+} else if (isset($_GET['success'])) {
+    echo '<script type="text/javascript">
+        $(document).ready(function(){
+            swal({
+                position: "top-end",
+                type: "info",
+                icon: "success",
+                title: "Registered succsesfully",
+                text: "Please check your email",
+                button: true,
+                timer: 2500
+            })
+        });
+    </script> ';
+} 
 ?>
 <body>
 

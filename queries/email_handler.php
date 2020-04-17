@@ -8,7 +8,7 @@ use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 // Load Composer's autoloader
-require './vendor/autoload.php';
+require '../vendor/autoload.php';
 
 // Instantiation and passing `true` enables exceptions
 $mail = new PHPMailer(true);
@@ -39,7 +39,7 @@ try {
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     if ($mail->send() === TRUE) { //If it is successful
-        header("Location: login.php? succes= yes");
+        header("Location: ../login.php? success= yes");
         session_destroy();
     }
 
