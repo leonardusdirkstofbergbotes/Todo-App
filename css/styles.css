@@ -201,3 +201,46 @@ input, textarea {
     height: 40px;
     border-radius: 50%;
 }
+
+.dropwrapper {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    height: 50px;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    border: 2px solid peru;
+}
+
+.dropdown {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: 300px;
+    position: absolute;
+    right: 0px;
+    top: 50px;
+    z-index: 999;
+    border: 2px solid blue;
+    align-items: center;
+    padding: 10px;
+} 
+.dropdown > a {
+    align-items: flex-end;
+    
+}
+
+#spacer {
+    height: 120px;
+}
+
+#spacer > button {
+    margin: 10px;
+}
+
+.dropdown > img {
+    width: 100px;
+    height: 110px;
+    border-radius: 50%;
+}

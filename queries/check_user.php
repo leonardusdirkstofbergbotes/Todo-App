@@ -21,6 +21,7 @@
                 $_SESSION['name'] = $record['name'];
                 $_SESSION['surname'] = $record['surname'];
                 $_SESSION['id'] = $record['id'];
+                $_SESSION['email'] = $record['email'];
                 header("Location: ../index.php");
             } else if ($pass->num_rows == 0) { /* Password is incorrect */
                 header("Location: ../login.php? pass= wrong");

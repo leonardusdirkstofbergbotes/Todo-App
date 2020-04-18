@@ -4,6 +4,7 @@
   $name = $_SESSION['name'];
   $surname= $_SESSION['surname'];
   $pic = $_SESSION['pic'];
+  $email = $_SESSION['email'];
 
 ?>
 <!DOCTYPE html>
@@ -22,8 +23,22 @@
 </head>
 <body>
   <div class="navbar">
-      <p>Signed in as <b><?php echo $name." ".$surname; ?></b><a href="login.php"><img src="user_uploads/<?php if ($pic != NULL) {echo $pic;} else { echo "user.png"; }?>" id="userpic"></a></p>
+      <p id="drop"><img src="user_uploads/<?php if ($pic != NULL) {echo $pic;} else { echo "user.png"; }?>" id="userpic"></p>
+        <div class="dropdown" id="me">
+          <img src="user_uploads/<?php if ($pic != NULL) {echo $pic;} else { echo "user.png"; }?>">
+          <b><?php echo $name." ".$surname; ?></b>
+          <small><?php echo $email; ?></small>
+          <div id="spacer"><button>Change details</button></div>
+          <a href="login.php">log out</a>
+        </div>
   </div>
+
+<script>
+  $("#me").hide();
+  $("#drop").click(function(){
+    $("#me").toggle(500)
+  });
+</script>
 
 </body>
 </html>
