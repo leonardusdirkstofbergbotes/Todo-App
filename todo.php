@@ -23,13 +23,14 @@
 </head>
 <body>
   <div class="navbar">
+    <img id="logo" src="img/logo.png">
       <p id="drop"><img src="user_uploads/<?php if ($pic != NULL) {echo $pic;} else { echo "user.png"; }?>" id="userpic"></p>
         <div class="dropdown" id="me">
           <img src="user_uploads/<?php if ($pic != NULL) {echo $pic;} else { echo "user.png"; }?>">
           <b><?php echo $name." ".$surname; ?></b>
           <small><?php echo $email; ?></small>
           <div id="spacer"><button>Change details</button></div>
-          <a href="login.php">log out</a>
+          <a href="login.php">Log out</a>
         </div>
   </div>
 

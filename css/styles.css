@@ -191,6 +191,15 @@ input, textarea {
     flex-direction: row;
 }
 
+#logo {
+    -webkit-transform: scale(0.7); /* Saf3.1+, Chrome */
+     -moz-transform: scale(0.7); /* FF3.5+ */
+      -ms-transform: scale(0.7); /* IE9 */
+       -o-transform: scale(0.7); /* Opera 10.5+ */
+          transform: scale(0.7);
+}
+
+
 .navbar > p {
     margin-left: auto;
     padding-right: 20px;
@@ -202,17 +211,6 @@ input, textarea {
     border-radius: 50%;
 }
 
-.dropwrapper {
-    display: flex;
-    justify-content: flex-end;
-    position: relative;
-    height: 50px;
-    position: fixed;
-    z-index: 999;
-    width: 100%;
-    border: 2px solid peru;
-}
-
 .dropdown {
     display: flex;
     flex-direction: column;
@@ -220,9 +218,12 @@ input, textarea {
     height: 300px;
     position: absolute;
     right: 0px;
-    top: 50px;
+    top: 80px;
     z-index: 999;
-    border: 2px solid blue;
+    -webkit-box-shadow: 0px 2px 20px 5px rgba(233, 233, 233, 0.7); 
+    box-shadow: 0px 2px 20px 5px rgba(233, 233, 233), 0.7;
+    background-color: rgba(253, 253, 253, 0.8);
+    border-bottom-left-radius: 10px;
     align-items: center;
     padding: 10px;
 } 
@@ -236,7 +237,10 @@ input, textarea {
 }
 
 #spacer > button {
-    margin: 10px;
+    margin-top: 30px;
+    padding: 5px;
+    background-color: rgb(110, 108, 255);
+    border: none;
 }
 
 .dropdown > img {
