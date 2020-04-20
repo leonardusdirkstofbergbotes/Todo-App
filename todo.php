@@ -46,7 +46,7 @@ if (isset($_GET['notetitle'])) {
   $dateDue = $_GET['dueDate'];
   $color = $_GET['color'];
   
-  $edit_area = "<form method=\"post\" action=\"methods/alter_note.php? oldnote=$title\" class=\"update\"> 
+  $edit_area = "<form method=\"post\" action=\"queries/alter_note.php? oldnote=$title\" class=\"update\"> 
                     <input type=\"text\" name=\"title\" value=\"$title\">
                   <label for=\"description\">Note details</label>
                     <textarea name=\"description\" rows=\"10\">$description</textarea>   
