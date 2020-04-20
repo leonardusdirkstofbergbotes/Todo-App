@@ -92,7 +92,7 @@ if (isset($_GET['notetitle'])) {
   if (isset($_GET['pull'])) {
   
   } else { 
-    echo "<form method=\"post\" action=\"methods/sort.php\" class=\"block\">
+    echo "<form method=\"post\" action=\"queries/sort.php\" class=\"block\">
         <button type=\"submit\" class=\"clickme\" id=\"sort\"><img src=\"icons/sort.png\" title=\"Sort alphabetically\"></button>
       </form>";
   }
