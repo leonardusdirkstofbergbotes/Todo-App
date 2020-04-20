@@ -64,7 +64,7 @@ if (isset($_GET['notetitle'])) {
  }
 ?> 
       
-    <form method="post" action="tables/notes.php" id="createnew"> 
+    <form method="post" action="queries/create_note.php" id="createnew"> 
     <div class="close">
       <button type="button" class="clickme" id='cancel'><img src="icons/cancel.png" title="Close"></button>
     </div>
