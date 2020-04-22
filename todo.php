@@ -4,6 +4,7 @@
   $name = $_SESSION['name'];
   $surname= $_SESSION['surname'];
   $pic = $_SESSION['pic'];
+  $email = $_SESSION['email'];
   $_POST['id'] = $_SESSION['id'];
   
 
@@ -25,8 +26,15 @@
 </head>
 <body>
   <div class="navbar">
-  <img id="logo" src="img/logo.png"> 
-      <p><b><?php echo $name ?></b><a href="login.php"><img src="user_uploads/<?php if ($pic != NULL) {echo $pic;} else { echo "user.png"; }?>" id="userpic"></a></p>
+  <img id="logo" src="img/logo.png">
+      <p id="drop"><b><?php echo $name ?></b><img src="user_uploads/<?php if ($pic != NULL) {echo $pic;} else { echo "user.png"; }?>" id="userpic"></p> 
+        <div class="dropdown" id="me"> 
+          <img src="user_uploads/<?php if ($pic != NULL) {echo $pic;} else { echo "user.png"; }?>"> 
+          <b><?php echo $name." ".$surname; ?></b> 
+          <small><?php echo $email; ?></small> 
+          <div id="spacer"><button>Change details</button></div> 
+          <a href="login.php">log out</a> 
+        </div>
   </div>
   <div class="note_container">
     <div id="edit_here" class="create_note"> 

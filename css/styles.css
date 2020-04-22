@@ -214,8 +214,16 @@ input, textarea {
 
 
 .navbar > p {
+    display: flex;
     margin-left: auto;
     padding-right: 20px;
+    align-items: center;
+}
+
+.navbar > p > b {
+    margin-right: 5px;
+    color: #3db39e;
+    font-size: 20px;
 }
 
 #userpic { /* Users profile pic */
@@ -406,15 +414,13 @@ input[type='color'] {
 }
 
 #sortable li { /* each note is a draggable list item */
-    border: 1px solid rgb(241, 241, 241);
-    background-color: rgba(255, 255, 255, 0.507);
     -webkit-box-shadow: -3px 3px 15px -12px #BABABA; 
     box-shadow: -3px 3px 15px -12px #BABABA;    
     border-radius: 4px;
     margin: 10px 10px;
     width: 300px;
     padding: 8px;
-    height: fit-content;
+    height: max-content;
     opacity: 0.8;
     cursor: move;
 }
