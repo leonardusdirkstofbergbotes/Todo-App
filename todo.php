@@ -66,7 +66,13 @@ function create() {
       url:  './queries/create_note.php',
       data: $("#createnew").serialize(),
       success: function(data) {
-        $('#sortable').append(data);
+        $("#sortable").empty();
+        $.ajax({
+    url: './methods/load_notes.php',
+    success: function(data) {
+      $('#sortable').append(data);
+    }
+  })
         $('#createnew').hide();
         document.getElementById('createnew').reset();
         $('#clickme').show();
