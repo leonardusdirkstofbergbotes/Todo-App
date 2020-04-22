@@ -25,6 +25,7 @@
 </head>
 <body>
   <div class="navbar">
+  <img id="logo" src="img/logo.png"> 
       <p><b><?php echo $name ?></b><a href="login.php"><img src="user_uploads/<?php if ($pic != NULL) {echo $pic;} else { echo "user.png"; }?>" id="userpic"></a></p>
   </div>
   <div class="note_container">
@@ -39,7 +40,7 @@
         <label for="title">Title</label>
         <input type="text" name="title" pattern=".{2,40}" id="place">
         <label for="description">Note details</label>
-        <textarea name="description" rows="10" pattern=".{5,1000}"></textarea>  
+        <textarea name="description" rows="6" pattern=".{5,1000}"></textarea>  
         <div class="pick">
             <input type="date" name="date" min = "<?php  echo date('Y-m-d'); ?>">
             <input type="color" name="color" value="#ffffff">    
@@ -62,6 +63,8 @@
 
 <script>
 $("#clickme").click(function(){
+  $('#edit_here').empty();
+      $('#edit_here').hide();
       $("#clickme").hide();
       $("#createnew").show(300);
       $("#createnew").addClass("shadow");
@@ -103,6 +106,7 @@ function create() {
   }
 
   function edit(elm) {
+    $("#createnew").hide();
     var id = elm.id;
     $.ajax({
       type: 'post',
