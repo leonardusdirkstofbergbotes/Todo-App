@@ -1,4 +1,5 @@
-$(document).ready(function() {  
+$(document).ready(function() { 
+  $("#createnew").hide(); 
   $.ajax({
     url: './queries/load_notes.php',
     success: function(data) {
@@ -8,16 +9,7 @@ $(document).ready(function() {
     $( function() {
       $( "#sortable" ).sortable();
       $( "#sortable" ).disableSelection();
-    } );        
-    $("#createnew").hide();
-    $("#clickme").click(function(){
-      $(this).hide();
-      $("#createnew").addClass("shadow");
-      $(window).scrollTop(0);
-      $("#createnew").show(300);
-      $('input[type="date"]').show();
-    });
-  
+    } );  
     $("#cancel").click(function(){
       $("#createnew").hide(300);
       $("#clickme").show(300);

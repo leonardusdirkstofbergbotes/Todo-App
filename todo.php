@@ -60,6 +60,13 @@
   </div>
 
 <script>
+$("#clickme").click(function(){
+      $("#clickme").hide();
+      $("#createnew").show(300);
+      $("#createnew").addClass("shadow");
+      $(window).scrollTop(0);
+    });
+
 function create() {
     $.ajax({
       type: 'post',
