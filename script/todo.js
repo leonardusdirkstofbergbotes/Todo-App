@@ -1,6 +1,6 @@
 $(document).ready(function() {  
   $.ajax({
-    url: './methods/load_notes.php',
+    url: './queries/load_notes.php',
     success: function(data) {
       $('#sortable').append(data);
     }

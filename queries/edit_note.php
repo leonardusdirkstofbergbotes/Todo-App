@@ -1,6 +1,6 @@
 <?php 
     $noteID = $_POST['noteID'];
-    require "../database/dbconnect.php";
+    require "../db/dbconnect.php";
 
     $check_note = "SELECT * FROM notes WHERE notes.noteID = \"$noteID\"";
     $row = $conn->query($check_note);

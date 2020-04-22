@@ -66,13 +66,7 @@ function create() {
       url:  './queries/create_note.php',
       data: $("#createnew").serialize(),
       success: function(data) {
-        $("#sortable").empty();
-        $.ajax({
-    url: './methods/load_notes.php',
-    success: function(data) {
-      $('#sortable').append(data);
-    }
-  })
+        $('#sortable').append(data);
         $('#createnew').hide();
         document.getElementById('createnew').reset();
         $('#clickme').show();
@@ -91,7 +85,7 @@ function create() {
       success: function() {
         $("#sortable").empty();
         $.ajax({
-    url: './methods/load_notes.php',
+    url: './queries/load_notes.php',
     success: function(data) {
       $('#sortable').append(data);
     }
@@ -120,7 +114,7 @@ function create() {
       success: function() {
         $("#sortable").empty();
         $.ajax({
-    url: './methods/load_notes.php',
+    url: './queries/load_notes.php',
     success: function(data) {
       $('#sortable').append(data);
     }

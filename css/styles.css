@@ -430,7 +430,6 @@ input[type='color'] {
 
 .buttonshide { /* div that contains the edit and delete button */
     display: flex;
-    visibility: hidden;
 }
 
 .buttonshide > .delete { /* delete note button */
