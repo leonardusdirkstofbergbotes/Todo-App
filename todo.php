@@ -101,7 +101,6 @@ function create() {
       url: './queries/edit_note.php',
       data: {noteID: id},
       success: function(data) {
-        $('#clickme').hide(300);
         $('#edit_here').append(data);
       }
     })
@@ -114,9 +113,8 @@ function create() {
       url:  './queries/alter_note.php',
       data: $("#edit_data").serialize(),
       success: function() {
-        $('#edit_here').hide(400);
+        $('#edit_here').hide(300);
         $("#sortable").empty();
-        $('#clickme').show(300);
         $.ajax({
     url: './queries/load_notes.php',
     success: function(data) {
