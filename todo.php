@@ -28,13 +28,14 @@
       <p><b><?php echo $name ?></b><a href="login.php"><img src="user_uploads/<?php if ($pic != NULL) {echo $pic;} else { echo "user.png"; }?>" id="userpic"></a></p>
   </div>
   <div class="note_container">
-  
-    <div class="create_note" id="edit_here">
-    
+    <div id="edit_here" class="create_note"> 
+  <!-- Edit data comes in here -->
+    </div>
+    <div class="create_note">
       <form  id="createnew"> 
-      <div class="close">
-        <button type="button" class="clickme" id='cancel'><img src="icons/cancel.png" title="Close"></button>
-      </div>
+        <div class="close">
+          <button type="button" class="clickme" id='cancel'><img src="icons/cancel.png" title="Close"></button>
+        </div>
         <label for="title">Title</label>
         <input type="text" name="title" pattern=".{2,40}" id="place">
         <label for="description">Note details</label>
@@ -108,7 +109,10 @@ function create() {
       url: './queries/edit_note.php',
       data: {noteID: id},
       success: function(data) {
+        $("#edit_here").empty();
         $('#edit_here').append(data);
+        $('#edit_here').show(500);
+        $("#edit_data").addClass("shadow");  
       }
     })
   }
@@ -126,6 +130,7 @@ function create() {
     url: './queries/load_notes.php',
     success: function(data) {
       $('#sortable').append(data);
+      return;
     }
   })
       }
