@@ -1,6 +1,5 @@
 <?php 
-    session_start();
-    $id = $_SESSION['id'];
+    $email = $_GET['email'];
 // Import PHPMailer classes into the global namespace
 // These must be at the top of your script, not inside a function
 use PHPMailer\PHPMailer\PHPMailer;
@@ -26,20 +25,20 @@ try {
 
     //Recipients
     $mail->setFrom('todoapp@gmail.com.com', 'Admin');
-    $mail->addAddress($_SESSION['email'], $_SESSION['name']);  // Add a recipient
+    $mail->addAddress($email, "");  // Add a recipient
     $mail->addReplyTo('info@example.com', 'Information');
 
     // Content
     $mail->isHTML(true); // Set email format to HTML
-    $mail->Subject = 'Todo APP Signup Confirmation';
-    $mail->Body    = "Thank you ".$_SESSION['name']." for signing up<br>
-                     <p>You are succsesfully registered. Please click on the link below to confirm your registration</p>
-                     <br> <a href=\"http://myprojects.com/Todo-App/queries/verified.php? id=$id\"> Click here</a> <br><br> Once you click on this link you will be redirected to the login page";
+    $mail->Subject = 'Reset Password!';
+    $mail->Body    = "A Reset password has been requested<br>
+                     <p>If this is correct please click on the link below to go to the reset password page</p>
+                     <br> <a href=\"http://myprojects.com/Todo-App/reset.php\"> Click here</a> <br><br>If this is not correct please ignore this message";
                       
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     if ($mail->send() === TRUE) { //If it is successful
-        header("Location: ../login.php? success= yes");
+        header("Location: ../reset_password.php? request=yes");
         session_destroy();
     }
 

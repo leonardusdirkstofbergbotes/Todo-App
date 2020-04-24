@@ -9,6 +9,37 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+<?php
+if (isset($_GET['notexists'])) {
+    echo '<script type="text/javascript">
+        $(document).ready(function(){
+            swal({
+                position: "top-end",
+                type: "info",
+                icon: "error",
+                title: "This user doesnt exist",
+                text: "try entering your exact email adress",
+                button: true,
+                timer: 2500
+            })
+        });
+    </script> '; 
+} else if (isset($_GET['request'])) {
+    echo '<script type="text/javascript">
+        $(document).ready(function(){
+            swal({
+                position: "top-end",
+                type: "info",
+                icon: "success",
+                title: "Reset email has been sent",
+                text: "please check your email",
+                button: true,
+                timer: 2500
+            })
+        });
+    </script> '; 
+}
+?>
 
 
     <form method="post" class="wrapper" id="signup_form" action="queries/reset_pass.php">
@@ -16,7 +47,7 @@
         <h1> Reset your password </h1>
         
         <div class="input">  
-            <label for='user_email'>Enter the email adress associated with your account </label>
+            <label for='reset_email'>Enter the email adress associated with your account </label>
             <input type="email" class="input" name="reset_email" placeholder="example@gmail.com" required>
         </div>
         <div id="buttonwrap">
