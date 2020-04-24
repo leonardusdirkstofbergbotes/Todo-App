@@ -33,7 +33,7 @@ try {
     $mail->Subject = 'Reset Password!';
     $mail->Body    = "A Reset password has been requested<br>
                      <p>If this is correct please click on the link below to go to the reset password page</p>
-                     <br> <a href=\"http://myprojects.com/Todo-App/reset.php\"> Click here</a> <br><br>If this is not correct please ignore this message";
+                     <br> <a href=\"http://myprojects.com/Todo-App/reset.php? email=$email\"> Click here</a> <br><br>If this is not correct please ignore this message";
                       
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
