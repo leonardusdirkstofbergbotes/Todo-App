@@ -24,6 +24,19 @@ body {
     height: 30px;
 }
 
+#sort {
+    position: fixed;
+    right: 40px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+#sort > img {
+    width: 30px;
+}
+
+
 
 /* Login & signup page styling STARTS*/
 
@@ -40,8 +53,8 @@ body {
 }
 
 .wrapper > img { /*login page image */
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
     height: 15vw;
 }
 
@@ -66,7 +79,7 @@ h1 {
 }
 
 .wrapper > .input > label {
-    font-size: 22px;
+    font-size: 20px;
 }
 
 .input:valid {
@@ -87,9 +100,15 @@ h1 {
     margin-left: auto;
 }
 
-.registerbut {
+.registerbut { /* signup button */
+    font-size: 20px;
     background-color: rgb(110, 108, 255);
     border: none;
+    color: whitesmoke;
+    outline: none;
+    width: 150px;
+    padding: 10px;
+    border-radius: 4px;
 }
 
 .registerbut:hover {
@@ -97,23 +116,16 @@ h1 {
     box-shadow: 0px 0px 15px 0px #6E6CFF;
 }
 
-.registerbut > button {
-    width: 150px;
-    padding: 10px;
-    border-radius: 4px;
-    font-size: larger;
-    color: whitesmoke;
-    outline: none;
-}
-
-.loginbut {
+.loginbut { /* Login button */
+    font-size: 20px;
     background-color: rgb(108, 255, 115);
     border: none;
-}
-
-.loginbut {
     color: white;
     text-shadow: 0px 0px 2px #878787;
+    width: 150px;
+    padding: 10px;
+    outline: none;
+    border-radius: 4px;
 }
 
 .loginbut:hover {
@@ -121,13 +133,27 @@ h1 {
     box-shadow: 0px 0px 15px 0px #6CFF73;
 }
 
-.loginbut > button {
+.resetbut { /* reset button */
+    font-size: 20px;
+    background-color: rgb(255, 108, 108);
+    border: none;
+    color: white;
+    text-shadow: 0px 0px 2px #878787;
     width: 150px;
     padding: 10px;
-    border-radius: 4px;
-    font-size: larger;
-    color: whitesmoke;
     outline: none;
+    border-radius: 4px;
+}
+
+.resetbut:hover {
+    -webkit-box-shadow: 0px 0px 15px 0px rgb(255, 108, 108); 
+    box-shadow: 0px 0px 15px 0px rgb(255, 108, 108); 
+}
+
+#forgot { 
+    font-size: 13px;
+    margin-left: auto;
+    text-decoration: none;
 }
 
 input, textarea {
@@ -245,7 +271,7 @@ input, textarea {
     -webkit-box-shadow: 0px 2px 20px 5px rgba(233, 233, 233, 0.7); 
     box-shadow: 0px 2px 20px 5px rgba(233, 233, 233), 0.7;
     background-color: rgba(253, 253, 253, 0.8);
-    border-bottom-left-radius: 10px;
+    border-bottom-left-radius: 4px;
     align-items: center;
     padding: 10px;
 } 
@@ -446,6 +472,12 @@ input[type='color'] {
     border: none;
     -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
     box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+.due {
+    width: max-content;
+    margin-left: auto;
+    font-size: 12px;
 }
 
 #sortable li:active {

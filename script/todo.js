@@ -4,6 +4,10 @@ $(document).ready(function() {
   $("#drop").click(function(){ 
     $("#me").toggle(500) 
   }); 
+  $('.dropdown2').hide();
+  $("#sort").click(function(){
+    $('.dropdown2').toggle(500);
+  });
   $.ajax({
     url: './queries/load_notes.php',
     success: function(data) {

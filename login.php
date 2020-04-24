@@ -101,6 +101,7 @@ if (isset($_GET['exist'])) {
         <div class="input">
             <label for='user_password1'>Password </label>
             <input type="password" class="input" name="user_password1" placeholder="Must have at least 6 characters" minlength="6" maxlength="30" id="p1" required>
+            <a href="reset_password.php" id="forgot">Forgot password? </a>
         </div>
         <div id="buttonwrap">
             <div class="sign"><button id="btn" type="submit" class="loginbut">Login</button></div>

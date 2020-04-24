@@ -6,8 +6,6 @@
   $pic = $_SESSION['pic'];
   $email = $_SESSION['email'];
   $_POST['id'] = $_SESSION['id'];
-  
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,7 +48,7 @@
         <label for="description">Note details</label>
         <textarea name="description" rows="6" pattern=".{5,1000}"></textarea>  
         <div class="pick">
-            <input type="date" name="date" min = "<?php  echo date('Y-m-d'); ?>">
+            <input type="date" name="date" min = "<?php  echo date('Y-m-d'); ?>" id='wha'>
             <input type="color" name="color" value="#ffffff">    
         </div>
         <div class="add_button">
@@ -58,6 +56,7 @@
         </div>
       </form>
     </div>
+    <p id="sort" onclick="sort()"><img src="icons/sort.png"></p> 
     <div class="form_controls"> 
       <button type="button" id="clickme">clickme to create a new note</button>
       </div>
@@ -86,7 +85,7 @@ function create() {
       data: $("#createnew").serialize(),
       success: function(data) {
         $('#sortable').append(data);
-        $('#createnew').hide();
+        $('#createnew').hide(500);
         document.getElementById('createnew').reset();
         $('#clickme').show();
       }
@@ -149,6 +148,16 @@ function create() {
 
     })
   }
+
+  function sort() {
+  $.ajax({
+    url:  './queries/sort.php',
+    success: function(data) {
+      $("#sortable").empty();
+      $('#sortable').append(data);
+    }
+  })
+}
 </script>
 </body>
 </html>
