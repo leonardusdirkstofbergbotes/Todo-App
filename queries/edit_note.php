@@ -6,6 +6,9 @@
     $row = $conn->query($check_note);
     while ($data = $row->fetch_assoc()) : ?>
         <form class="update" id="edit_data"> 
+        <div class="close">
+          <button type="button" class="clickme" onclick="cancel()"><img src="./icons/cancel.png" title="Close"></button>
+        </div>
             <input type="hidden" name="noteID" value="<?php echo $noteID ?>">
             <label for="title">Title</label>
             <input type="text" name="title" pattern=".{2,40}" id="place" value="<?php echo $data['title']; ?>">

@@ -379,8 +379,13 @@ input[type='color'] {
 }
 
 .upd {
-    height: 50px !important; 
-    width: 50px !important;
+    margin: 10px;
+    height: 30px !important; 
+    width: 30px !important;
+}
+
+.upd:hover {
+    animation: 0.4s grow 1 forwards;
 }
 
 .form_controls { /* div that contains the create new note button */
@@ -423,7 +428,6 @@ input[type='color'] {
 }
 
 .add_button > button:hover {
-    transform: scale(1);
     animation: 0.4s grow 1 forwards;
 }
 

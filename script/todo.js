@@ -18,18 +18,12 @@ $(document).ready(function() {
       $( "#sortable" ).sortable();
       $( "#sortable" ).disableSelection();
     } );  
-    $("#cancel").click(function(){
-      $("#createnew").hide(300);
-      $("#clickme").show(300);
-    })
-
-    // $(".note").mouseenter(function(){
-    //   console.log('hello');
-    //   var div = $(this).children('.buttonshide');
-    //   $(div).css( "visibility", "visible" );
-    //   $(this).mouseleave(function() {
-    //     $(div).css( "visibility", "hidden" ) 
-    //   });
-    // }); 
-  }) 
+    
+$("#cancel").click(function(){
+  $("#createnew").hide(300);
+  $("#clickme").show(300);
+});
+  }); 
+  
+  
   

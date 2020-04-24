@@ -69,6 +69,10 @@
   </div>
 
 <script>
+function cancel() {
+  $('#edit_data').hide(300);
+}
+
 $("#clickme").click(function(){
   $('#edit_here').empty();
       $('#edit_here').hide();
@@ -77,6 +81,7 @@ $("#clickme").click(function(){
       $("#createnew").addClass("shadow");
       $(window).scrollTop(0);
     });
+    
 
 function create() {
     $.ajax({
