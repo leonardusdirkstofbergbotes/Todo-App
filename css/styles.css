@@ -536,6 +536,9 @@ input[type='color'] {
 .dropdown {
     top: 72px;
 }
+.wrapper > img { /*login page image */ 
+    height: 27vw;
+}    
 
 }
 
@@ -554,10 +557,26 @@ input[type='color'] {
     }
 }    
 
+@media screen and (max-width: 370px) { 
+    .loginbut { /* Login button */ 
+        width: 100px;
+    }    
+
+    .registerbut { /* signup button */
+        width: 100px;
+    }
+
+}
+
 @media screen and (max-width: 350px) { 
     .wrapper {
         width: 98%;
     }
+
+    .wrapper > img { /*login page image */ 
+        height: 30vw;
+    }    
+
 }
 
 
