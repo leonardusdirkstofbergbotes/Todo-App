@@ -1,20 +1,22 @@
 <?php 
-    if (isset($_SESSION)) {
+    if (isset($_SESSION)) { /* if a user wa loged in and he decided to log out then he will come back to this page and his session will be destroyed */
         session_destroy();  
     }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To do</title>
+    <title>Todo Login</title>
+    <link rel="icon" type="image/gif/png" href="icons/favicon.png" alt="Todo APP">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <?php 
+
+ /* These are sweetalerts that will popup based on a condition to notify the user of what happened in the backend */
 if (isset($_GET['exist'])) {
     echo '<script type="text/javascript">
         $(document).ready(function(){
@@ -85,17 +87,15 @@ if (isset($_GET['exist'])) {
             })
         });
     </script> ';
-}
+} /* sweetalerts END */
 ?>
 <body>
 
-
     <form method="post" class="wrapper" id="signup_form" action="queries/check_user.php">
-    <img src="img/signup_banner.jpg">
-        <h1> Log in </h1>
-        
+    <img src="img/signup_banner.jpg" alt="Login to use the Todo APP">
+        <h1>Log in</h1>
         <div class="input">  
-            <label for='user_email'>Email adress </label>
+            <label for='user_email'>Email adress</label>
             <input type="email" class="input" name="user_email" placeholder="example@gmail.com" required>
         </div>
         <div class="input">
@@ -106,16 +106,16 @@ if (isset($_GET['exist'])) {
         <div id="buttonwrap">
             <div class="sign"><button id="btn" type="submit" class="loginbut">Login</button></div>
             <div class="login"><a href="signup.php"><button type="button" class="registerbut">Register</button></a></div>
-        </div>
-        
+        </div> 
     </form>
     
-    <script>
-        $(function() {                       
-  $("#btn").click(function() {
-    $("input").addClass("check");
-  });
+<script>
+    $(function() { /* adds validation alert once you click on the login button */             
+        $("#btn").click(function() {
+            $("input").addClass("check");
+        });
    });
-        </script>
+</script>
+
 </body>
 </html>
