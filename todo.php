@@ -56,10 +56,11 @@
         </div>
       </form>
     </div>
-    <p id="sort" onclick="sort()"><img src="icons/sort.png"></p> 
+    
     <div class="form_controls"> 
       <button type="button" id="clickme">clickme to create a new note</button>
       </div>
+      <p id="sort" onclick="sort()"><img src="icons/sort.png"></p> 
   <div>
 
   <div class="note_wrapper" id="dragme">
@@ -82,11 +83,10 @@ $("#clickme").click(function(){
       $(window).scrollTop(0);
     });
     
-
 function create() {
     $.ajax({
       type: 'post',
-      url:  './queries/create_note.php',
+      url:  './queries/create_note.php', /*action */
       data: $("#createnew").serialize(),
       success: function(data) {
         $('#sortable').append(data);

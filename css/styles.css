@@ -26,7 +26,8 @@ body {
 
 #sort {
     position: fixed;
-    right: 40px;
+    top: 120px;
+    right: 20px;
     display: flex;
     flex-direction: column;
     cursor: pointer;
@@ -175,42 +176,6 @@ input, textarea {
   @keyframes glow {
     50% {background-color: rgb(253, 220, 220);}
   }
-
-@media screen and (max-width: 900px) { 
-    .wrapper {
-        width: 70%;
-    }
-    .wrapper > img { /*login page image */
-        height: 20vw;
-    }
-    .wrapper > .sign { /*signup page img */
-        height: 11vw;
-    }
-}
-
-@media screen and (max-width: 700px) { 
-    .wrapper {
-        width: 80%;
-    }
-}
-
-@media screen and (max-width: 500px) { 
-    .wrapper {
-        width: 90%;
-    }
-    .wrapper > img { /*login page image */
-        height: 25vw;
-    }
-    .wrapper > .sign { /*signup page img */
-        height: 15vw;
-    }
-}
-
-@media screen and (max-width: 350px) { 
-    .wrapper {
-        width: 98%;
-    }
-}
 
 /* Login & signup page styling ENDS */
 
@@ -450,6 +415,8 @@ input[type='color'] {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: start;
+    padding-left: 0px;
+    justify-content: space-evenly;
 }
 
 #sortable li { /* each note is a draggable list item */
@@ -506,4 +473,92 @@ input[type='color'] {
 .edit { /* the edit note button */
     margin: 10px;
 }
+
+@media screen and (max-width: 1260px) { 
+    .note_container { 
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 900px) { 
+    .wrapper {
+        width: 70%;
+    }
+    .wrapper > img { /*login page image */
+        height: 20vw;
+    }
+    .wrapper > .sign { /*signup page img */
+        height: 11vw;
+    }
+
+    /* todo page media queries */
+
+    .note_container {
+        width: 95%;
+    }
+
+    #sortable li {
+        width: 250px;
+    }
+
+}
+
+@media screen and (max-width: 700px) { 
+    .wrapper {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 602px) { 
+    #sortable li {
+        width: 70%;
+    }
+
+    #createnew {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 500px) { 
+    .wrapper {
+        width: 90%;
+    }
+    .wrapper > img { /*login page image */
+        height: 25vw;
+    }
+    .wrapper > .sign { /*signup page img */
+        height: 15vw;
+    }
+}
+
+
+@media screen and (max-width: 436px) { 
+.dropdown {
+    top: 72px;
+}
+
+}
+
+@media screen and (max-width: 400px) { 
+    #sortable li {
+        width: 85%;
+    }
+
+    #sort {
+        display: block;
+        position: relative;
+        margin: auto;
+        width: fit-content;
+        right: 0; top: 0;
+        text-align: center;
+    }
+}    
+
+@media screen and (max-width: 350px) { 
+    .wrapper {
+        width: 98%;
+    }
+}
+
+
 
