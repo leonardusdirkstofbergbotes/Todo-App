@@ -9,7 +9,7 @@ foreach ($_FILES as $file){
     move_uploaded_file($file["tmp_name"], $target_file);
     $file_name = $file["name"];
 }
-global $file_name;
+global $file_name; 
 
 require "../db/dbconnect.php";
 
@@ -23,12 +23,12 @@ if ($result->num_rows > 0) { /* User alreayd exists - goes to LOGIN page */
                 VALUES (\"$name\", \"$surname\", \"$pass\", \"$email\", \"$file_name\");";
     $conn->query($create);  
     $result = $conn->query($check);
-        $record = $result->fetch_assoc(); 
-        session_start();
-        $_SESSION['id'] = $record['id'];
-        $_SESSION['name'] = $record['name'];
-        $_SESSION['surname'] = $record['surname'];
-        $_SESSION['email'] = $record['email'];
-        header("Location: email_handler.php"); /* <--- This page will send an email to the user to verify his account */
+    $record = $result->fetch_assoc(); 
+    session_start();
+    $_SESSION['id'] = $record['id'];
+    $_SESSION['name'] = $record['name'];
+    $_SESSION['surname'] = $record['surname'];
+    $_SESSION['email'] = $record['email'];
+    header("Location: email_handler.php"); /* <--- This page will send an email to the user in order to verify his account */
 }
 ?>

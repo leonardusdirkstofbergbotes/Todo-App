@@ -6,5 +6,4 @@
     $alter_pass = "UPDATE users SET password = \"$pass\" WHERE email = \"$email\"";
     $conn->query($alter_pass);
     header("Location: ../login.php");
-
 ?>
