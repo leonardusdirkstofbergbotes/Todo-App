@@ -30,7 +30,6 @@
           <img src="user_uploads/<?php if ($pic != NULL) {echo $pic;} else { echo "user.png"; }?>"> 
           <b><?php echo $name." ".$surname; ?></b> 
           <small><?php echo $email; ?></small> 
-          <div id="spacer"><button>Change details</button></div> 
           <a href="login.php">log out</a> 
         </div>
   </div>
