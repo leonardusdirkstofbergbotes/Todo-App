@@ -5,6 +5,7 @@ html, body {
 body { 
     background-image: url("../img/back.jpg");  
     background-size: cover;
+    font-family: 'Baloo Paaji 2', cursive;
 }
 
 
