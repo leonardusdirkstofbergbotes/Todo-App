@@ -108,6 +108,7 @@ function create() {
     title: document.getElementById("place").value,
     description: document.getElementById("are").value,
     date: document.getElementById("wha").value,
+    noteID: document.getElementById("ide").value,
     color: window.value
   };
     $.ajax({
@@ -160,7 +161,13 @@ function create() {
   }
   
   function update_note() {
-    event.preventDefault(); 
+    event.preventDefault();
+    let formData = {
+    title: document.getElementById("place").value,
+    description: document.getElementById("are").value,
+    date: document.getElementById("wha").value,
+    color: window.value
+  }; 
     $.ajax({
       type: 'post',
       url:  './queries/alter_note.php',
