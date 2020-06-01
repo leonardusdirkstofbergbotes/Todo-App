@@ -20,6 +20,9 @@
   integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
   crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css?family=Baloo+Paaji+2&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.2.620/styles/kendo.bootstrap-v4.min.css">
+  <script src="https://kendo.cdn.telerik.com/2018.2.620/js/kendo.all.min.js"></script>
+
   <script src="script/todo.js"></script>
 </head>
 <body>
@@ -45,10 +48,10 @@
         <label for="title">Title</label>
         <input type="text" name="title" pattern=".{2,40}" id="place">
         <label for="description">Note details</label>
-        <textarea name="description" rows="6" pattern=".{5,1000}"></textarea>  
+        <textarea name="description" rows="6" pattern=".{5,1000}" id="are"></textarea>  
         <div class="pick">
             <input type="date" name="date" min = "<?php  echo date('Y-m-d'); ?>" id='wha'>
-            <input type="color" name="color" value="#ffffff">    
+            <div id="palette" onclick="color(this)"></div>
         </div>
         <div class="add_button">
           <button type="submit" class="clickme add" onclick="create()"><img src="icons/add.png" title="Add note"></button>
@@ -69,6 +72,23 @@
   </div>
 
 <script>
+
+function color(elm) {
+  bee = event.target;
+  mee = $(bee).attr("aria-label");
+  console.log(mee);
+  window.value = mee;
+
+}
+$('#palette').kendoColorPalette({
+      columns: 8,
+      tileSize: 25,
+      palette: [
+        '#e66400', '#24408f', '#48c51c', '#1ca4cd',
+        '#f0e10f', '#d6d4e0', '#b8a9c9', '#622569'
+        ]
+    });
+
 function cancel() {
   $('#edit_data').hide(300);
 }
@@ -83,10 +103,17 @@ $("#clickme").click(function(){
     });
     
 function create() {
+  event.preventDefault(); 
+  let formData = {
+    title: document.getElementById("place").value,
+    description: document.getElementById("are").value,
+    date: document.getElementById("wha").value,
+    color: window.value
+  };
     $.ajax({
       type: 'post',
       url:  './queries/create_note.php', /*action */
-      data: $("#createnew").serialize(),
+      data: formData,
       success: function(data) {
         $('#sortable').append(data);
         $('#createnew').hide(500);
@@ -94,7 +121,7 @@ function create() {
         $('#clickme').show();
       }
     })
-     event.preventDefault(); 
+     
 
 }
 

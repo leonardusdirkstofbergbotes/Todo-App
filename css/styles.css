@@ -387,6 +387,10 @@ input[type='color'] {
     margin-left: 80px;
 }
 
+#palette {
+    margin-left: 50px;
+}
+
 .add_button { /* add new note button */
     display: flex;
     flex-direction: row;
