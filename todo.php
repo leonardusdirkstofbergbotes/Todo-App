@@ -57,7 +57,7 @@
     </div>
     
     <div class="form_controls"> 
-      <button type="button" id="clickme">clickme to create a new note</button>
+      <button type="button" id="clickme">Create a New Note</button>
       </div>
       <p id="sort" onclick="sort()"><img src="icons/sort.png"></p> 
   <div>
